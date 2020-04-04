@@ -64,10 +64,6 @@ Y.namespace('M.atto_panel').Button = Y.Base.create('button', Y.M.editor_atto.Edi
      * @method Initializer
      */
     initializer: function() {
-        // If we don't have the capability to view then give up.
-        if (this.get('disabled')){
-            return;
-        }
 
         this.addButton({
             icon:'icon',
@@ -78,7 +74,7 @@ Y.namespace('M.atto_panel').Button = Y.Base.create('button', Y.M.editor_atto.Edi
 
 
     /**
-     * Get the id of the text link control where we store the link text for the panel
+     * Get the id of the control where we store the text for the panel
      *
      * @method _getCONTENTCONTROLName
      * @return {String} the txt for the text link form field
@@ -96,8 +92,7 @@ Y.namespace('M.atto_panel').Button = Y.Base.create('button', Y.M.editor_atto.Edi
      */
     _displayDialogue: function(e) {
         e.preventDefault();
-        var width=400;
-
+        var width=800;
 
         var dialogue = this.getDialogue({
             headerContent: M.util.get_string('dialogtitle', COMPONENTNAME),
